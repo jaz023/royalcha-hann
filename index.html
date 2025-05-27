@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>昼飯発注/午餐訂購</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+  <img src="images/sumitomo.png" class="logo">
+    <h2>オンラインオーダー/線上點餐</h2>
+    <form id="orderForm">
+
+  <div id="loadingSpinner" class="spinner" style="display:none;"></div>
+
+  <div class="form-group">
+    <label for="name">名前/姓名：</label>
+      <input type="text" class="form-input name" id="name" placeholder="名前入力/輸入姓名">
+  </div>
+
+      <div class="menu-item">
+        <img src="images/hamuko-nnchahann.jpg" alt="ハムコーン炒飯">
+        <div class="info">
+          <h3>ハムコーン炒飯/玉米火腿炒飯</h3>
+
+          <p class="price" data-price="85">金額：85</p>
+
+          <select class="qty" name="qty[]" data-item="ハムコーン炒飯/玉米火腿炒飯">
+           <option value="0">0</option>
+           <option value="1">1</option>
+           <option value="2">2</option>
+           <option value="3">3</option>
+           <option value="4">4</option>
+           <option value="5">5</option>
+           <option value="6">6</option>
+           <option value="7">7</option>
+           <option value="8">8</option>
+           <option value="9">9</option>
+           <option value="10">10</option>
+           <option value="other">その他/其他</option>
+         </select>
+          <input type="number" name="qty_input[]" class="qty-input" style="display:none;" min="0" max="99" value="0" />
+          <input type="text" name="note[]" placeholder="備考" class="note">
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="images/butanikuchahann.jpg" alt="油鶏モモ肉弁当">
+        <div class="info">
+          <h3>豚肉炒飯/肉絲炒飯</h3>
+
+          <p class="price" data-price="90">金額：90</p>
+
+          <select class="qty" name="qty[]" data-item="豚肉炒飯/肉絲炒飯">
+          <option value="0">0</option>
+           <option value="1">1</option>
+           <option value="2">2</option>
+           <option value="3">3</option>
+           <option value="4">4</option>
+           <option value="5">5</option>
+           <option value="6">6</option>
+           <option value="7">7</option>
+           <option value="8">8</option>
+           <option value="9">9</option>
+           <option value="10">10</option>
+           <option value="other">その他/其他</option>
+         </select>
+          <input type="number" name="qty_input[]" class="qty-input" style="display:none;" min="0" max="99" value="0" />
+          <input type="text" name="note[]" placeholder="備考" class="note">
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="images/so-se-jichahann.jpg" alt="ソーセージ炒飯">
+        <div class="info">
+          <h3>ソーセージ炒飯/香腸炒飯</h3>
+
+          <p class="price" data-price="90">金額：90</p>
+
+          <select class="qty" name="qty[]" data-item="ソーセージ炒飯/香腸炒飯">
+           <option value="0">0</option>
+           <option value="1">1</option>
+           <option value="2">2</option>
+           <option value="3">3</option>
+           <option value="4">4</option>
+           <option value="5">5</option>
+           <option value="6">6</option>
+           <option value="7">7</option>
+           <option value="8">8</option>
+           <option value="9">9</option>
+           <option value="10">10</option>
+           <option value="other">その他/其他</option>
+         </select>
+          <input type="number" name="qty_input[]" class="qty-input" style="display:none;" min="0" max="99" value="0" />
+          <input type="text" name="note[]" placeholder="備考" class="note">
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="images/komayuubutanikuchahann.jpg" alt="コマ油豚肉炒飯">
+        <div class="info">
+          <h3>コマ油豚肉炒飯/麻油塔香豬肉炒飯</h3>
+
+          <p class="price" data-price="95">金額：95</p>
+
+          <select class="qty" name="qty[]" data-item="コマ油豚肉炒飯/麻油塔香豬肉炒飯">
+          <option value="0">0</option>
+           <option value="1">1</option>
+           <option value="2">2</option>
+           <option value="3">3</option>
+           <option value="4">4</option>
+           <option value="5">5</option>
+           <option value="6">6</option>
+           <option value="7">7</option>
+           <option value="8">8</option>
+           <option value="9">9</option>
+           <option value="10">10</option>
+           <option value="other">その他/其他</option>
+         </select>
+          <input type="number" name="qty_input[]" class="qty-input" style="display:none;" min="0" max="99" value="0" />
+          <input type="text" name="note[]" placeholder="備考" class="note">
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="images/pi-manngyuunikucha-hann.jpg" alt="ピーマン牛肉炒飯">
+        <div class="info">
+          <h3>ピーマン牛肉炒飯/青椒牛肉炒飯</h3>
+
+          <p class="price" data-price="100">金額：100</p>
+
+          <select class="qty" name="qty[]" data-item="ピーマン牛肉炒飯/青椒牛肉炒飯">
+           <option value="0">0</option>
+           <option value="1">1</option>
+           <option value="2">2</option>
+           <option value="3">3</option>
+           <option value="4">4</option>
+           <option value="5">5</option>
+           <option value="6">6</option>
+           <option value="7">7</option>
+           <option value="8">8</option>
+           <option value="9">9</option>
+           <option value="10">10</option>
+           <option value="other">その他/其他</option>
+         </select>
+          <input type="number" name="qty_input[]" class="qty-input" style="display:none;" min="0" max="99" value="0" />
+          <input type="text" name="note[]" placeholder="備考" class="note">
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="images/hebicha-hann.jpg" alt="海老炒飯">
+        <div class="info">
+          <h3>海老炒飯/蝦仁炒飯</h3>
+
+          <p class="price" data-price="100">金額：100</p>
+
+         <select class="qty" name="qty[]" data-item="海老炒飯/蝦仁炒飯">
+           <option value="0">0</option>
+           <option value="1">1</option>
+           <option value="2">2</option>
+           <option value="3">3</option>
+           <option value="4">4</option>
+           <option value="5">5</option>
+           <option value="6">6</option>
+           <option value="7">7</option>
+           <option value="8">8</option>
+           <option value="9">9</option>
+           <option value="10">10</option>
+           <option value="other">その他/其他</option>
+         </select>
+          <input type="number" name="qty_input[]" class="qty-input" style="display:none;" min="0" max="99" value="0" />
+          <input type="text" name="note[]" placeholder="備考" class="note">
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="images/kaisenncha-hann.jpg" alt="海鮮炒飯">
+        <div class="info">
+          <h3>海鮮炒飯/海鮮炒飯</h3>
+
+          <p class="price" data-price="110">金額：110</p>
+
+         <select class="qty" name="qty[]" data-item="海鮮炒飯/海鮮炒飯">
+           <option value="0">0</option>
+           <option value="1">1</option>
+           <option value="2">2</option>
+           <option value="3">3</option>
+           <option value="4">4</option>
+           <option value="5">5</option>
+           <option value="6">6</option>
+           <option value="7">7</option>
+           <option value="8">8</option>
+           <option value="9">9</option>
+           <option value="10">10</option>
+           <option value="other">その他/其他</option>
+         </select>
+          <input type="number" name="qty_input[]" class="qty-input" style="display:none;" min="0" max="99" value="0" />
+          <input type="text" name="note[]" placeholder="備考" class="note">
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="images/kimuchigyuunikucha-hann.jpg" alt="キムチ牛肉炒飯">
+        <div class="info">
+          <h3>キムチ牛肉炒飯/泡菜牛肉炒飯</h3>
+
+          <p class="price" data-price="100">金額：100</p>
+
+         <select class="qty" name="qty[]" data-item="キムチ牛肉炒飯/泡菜牛肉炒飯">
+           <option value="0">0</option>
+           <option value="1">1</option>
+           <option value="2">2</option>
+           <option value="3">3</option>
+           <option value="4">4</option>
+           <option value="5">5</option>
+           <option value="6">6</option>
+           <option value="7">7</option>
+           <option value="8">8</option>
+           <option value="9">9</option>
+           <option value="10">10</option>
+           <option value="other">その他/其他</option>
+         </select>
+          <input type="number" name="qty_input[]" class="qty-input" style="display:none;" min="0" max="99" value="0" />
+          <input type="text" name="note[]" placeholder="備考" class="note">
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="images/kimuchibutanikucha-hann.webp" alt="キムチ豚肉炒飯">
+        <div class="info">
+          <h3>キムチ豚肉炒飯/泡菜豬肉炒飯</h3>
+
+          <p class="price" data-price="95">金額：95</p>
+
+         <select class="qty" name="qty[]" data-item="キムチ豚肉炒飯/泡菜豬肉炒飯">
+           <option value="0">0</option>
+           <option value="1">1</option>
+           <option value="2">2</option>
+           <option value="3">3</option>
+           <option value="4">4</option>
+           <option value="5">5</option>
+           <option value="6">6</option>
+           <option value="7">7</option>
+           <option value="8">8</option>
+           <option value="9">9</option>
+           <option value="10">10</option>
+           <option value="other">その他/其他</option>
+         </select>
+          <input type="number" name="qty_input[]" class="qty-input" style="display:none;" min="0" max="99" value="0" />
+          <input type="text" name="note[]" placeholder="備考" class="note">
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="images/doublecha-hannfeatchikenn.jpg" alt="ダブル炒飯プラス一匹鶏">
+        <div class="info">
+          <h3>ダブル炒飯プラス一匹鶏/雙人全雞炒飯</h3>
+
+          <p class="price" data-price="338">金額：338</p>
+
+         <select class="qty" name="qty[]" data-item="ダブル炒飯プラス一匹鶏/雙人全雞炒飯">
+           <option value="0">0</option>
+           <option value="1">1</option>
+           <option value="2">2</option>
+           <option value="3">3</option>
+           <option value="4">4</option>
+           <option value="5">5</option>
+           <option value="6">6</option>
+           <option value="7">7</option>
+           <option value="8">8</option>
+           <option value="9">9</option>
+           <option value="10">10</option>
+           <option value="other">その他/其他</option>
+         </select>
+          <input type="number" name="qty_input[]" class="qty-input" style="display:none;" min="0" max="99" value="0" />
+          <input type="text" name="note[]" placeholder="備考" class="note">
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="images/furaitorimomonikucha-hann.jpeg" alt="フライ鶏モモ肉炒飯">
+        <div class="info">
+          <h3>フライ鶏モモ肉炒飯/酥炸大雞腿炒飯</h3>
+
+          <p class="price" data-price="140">金額：140</p>
+
+         <select class="qty" name="qty[]" data-item="フライ鶏モモ肉炒飯/酥炸大雞腿炒飯">
+           <option value="0">0</option>
+           <option value="1">1</option>
+           <option value="2">2</option>
+           <option value="3">3</option>
+           <option value="4">4</option>
+           <option value="5">5</option>
+           <option value="6">6</option>
+           <option value="7">7</option>
+           <option value="8">8</option>
+           <option value="9">9</option>
+           <option value="10">10</option>
+           <option value="other">その他/其他</option>
+         </select>
+          <input type="number" name="qty_input[]" class="qty-input" style="display:none;" min="0" max="99" value="0" />
+          <input type="text" name="note[]" placeholder="備考" class="note">
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="images/xoso-sugyuunikucha-hann.jpeg" alt="XOソース牛肉炒飯">
+        <div class="info">
+          <h3>XOソース牛肉炒飯/XO醬譨肉炒飯</h3>
+
+          <p class="price" data-price="100">金額：100</p>
+
+         <select class="qty" name="qty[]" data-item="XOソース牛肉炒飯/XO醬譨肉炒飯">
+           <option value="0">0</option>
+           <option value="1">1</option>
+           <option value="2">2</option>
+           <option value="3">3</option>
+           <option value="4">4</option>
+           <option value="5">5</option>
+           <option value="6">6</option>
+           <option value="7">7</option>
+           <option value="8">8</option>
+           <option value="9">9</option>
+           <option value="10">10</option>
+           <option value="other">その他/其他</option>
+         </select>
+          <input type="number" name="qty_input[]" class="qty-input" style="display:none;" min="0" max="99" value="0" />
+          <input type="text" name="note[]" placeholder="備考" class="note">
+        </div>
+      </div>
+
+    <div class="menu-item">
+        <img src="images/xoso-subutanikucha-hann.jpeg" alt="XOソース豚肉炒飯">
+        <div class="info">
+          <h3>XOソース豚肉炒飯/XO醬豬肉炒飯</h3>
+
+          <p class="price" data-price="95">金額：95</p>
+
+         <select class="qty" name="qty[]" data-item="XOソース豚肉炒飯/XO醬豬肉炒飯">
+           <option value="0">0</option>
+           <option value="1">1</option>
+           <option value="2">2</option>
+           <option value="3">3</option>
+           <option value="4">4</option>
+           <option value="5">5</option>
+           <option value="6">6</option>
+           <option value="7">7</option>
+           <option value="8">8</option>
+           <option value="9">9</option>
+           <option value="10">10</option>
+           <option value="other">その他/其他</option>
+         </select>
+          <input type="number" name="qty_input[]" class="qty-input" style="display:none;" min="0" max="99" value="0" />
+          <input type="text" name="note[]" placeholder="備考" class="note">
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="images/hebicha-hann.jpg" alt="半匹鶏肉炒飯">
+        <div class="info">
+          <h3>半匹鶏肉炒飯/半雞炒飯</h3>
+
+          <p class="price" data-price="178">金額：178</p>
+
+         <select class="qty" name="qty[]" data-item="半匹鶏肉炒飯/半雞炒飯">
+           <option value="0">0</option>
+           <option value="1">1</option>
+           <option value="2">2</option>
+           <option value="3">3</option>
+           <option value="4">4</option>
+           <option value="5">5</option>
+           <option value="6">6</option>
+           <option value="7">7</option>
+           <option value="8">8</option>
+           <option value="9">9</option>
+           <option value="10">10</option>
+           <option value="other">その他/其他</option>
+         </select>
+          <input type="number" name="qty_input[]" class="qty-input" style="display:none;" min="0" max="99" value="0" />
+          <input type="text" name="note[]" placeholder="備考" class="note">
+        </div>
+
+      </div><div class="menu-item">
+        <img src="images/sa-chabutanikuannkakegohann.jpeg" alt="サーチャ豚肉餡掛けご飯">
+        <div class="info">
+          <h3>サーチャ豚肉餡掛けご飯/沙茶豬肉燴飯</h3>
+
+          <p class="price" data-price="95">金額：95</p>
+
+         <select class="qty" name="qty[]" data-item="サーチャ豚肉餡掛けご飯/沙茶豬肉燴飯">
+           <option value="0">0</option>
+           <option value="1">1</option>
+           <option value="2">2</option>
+           <option value="3">3</option>
+           <option value="4">4</option>
+           <option value="5">5</option>
+           <option value="6">6</option>
+           <option value="7">7</option>
+           <option value="8">8</option>
+           <option value="9">9</option>
+           <option value="10">10</option>
+           <option value="other">その他/其他</option>
+         </select>
+          <input type="number" name="qty_input[]" class="qty-input" style="display:none;" min="0" max="99" value="0" />
+          <input type="text" name="note[]" placeholder="備考" class="note">
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="images/sa-chagyuunikuannkakegohann.jpeg" alt="サーチャ牛肉餡掛けご飯">
+        <div class="info">
+          <h3>サーチャ牛肉餡掛けご飯/沙茶牛肉燴飯</h3>
+
+          <p class="price" data-price="100">金額：100</p>
+
+         <select class="qty" name="qty[]" data-item="サーチャ牛肉餡掛けご飯/沙茶牛肉燴飯">
+           <option value="0">0</option>
+           <option value="1">1</option>
+           <option value="2">2</option>
+           <option value="3">3</option>
+           <option value="4">4</option>
+           <option value="5">5</option>
+           <option value="6">6</option>
+           <option value="7">7</option>
+           <option value="8">8</option>
+           <option value="9">9</option>
+           <option value="10">10</option>
+           <option value="other">その他/其他</option>
+         </select>
+          <input type="number" name="qty_input[]" class="qty-input" style="display:none;" min="0" max="99" value="0" />
+          <input type="text" name="note[]" placeholder="備考" class="note">
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="images/sa-chabutanikuyakisoba.jpeg" alt="">
+        <div class="info">
+          <h3>サーチャ豚肉焼きそば/沙茶豬肉炒麵</h3>
+
+          <p class="price" data-price="95">金額：95</p>
+
+         <select class="qty" name="qty[]" data-item="サーチャ豚肉焼きそば/沙茶豬肉炒麵">
+           <option value="0">0</option>
+           <option value="1">1</option>
+           <option value="2">2</option>
+           <option value="3">3</option>
+           <option value="4">4</option>
+           <option value="5">5</option>
+           <option value="6">6</option>
+           <option value="7">7</option>
+           <option value="8">8</option>
+           <option value="9">9</option>
+           <option value="10">10</option>
+           <option value="other">その他/其他</option>
+         </select>
+          <input type="number" name="qty_input[]" class="qty-input" style="display:none;" min="0" max="99" value="0" />
+          <input type="text" name="note[]" placeholder="備考" class="note">
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="images/sa-chagyuunikuyakisoba.jpeg" alt="サーチャ牛肉焼きそば">
+        <div class="info">
+          <h3>サーチャ牛肉焼きそば/沙茶牛肉炒麵</h3>
+
+          <p class="price" data-price="100">金額：100</p>
+
+         <select class="qty" name="qty[]" data-item="サーチャ牛肉焼きそば/沙茶牛肉炒麵">
+           <option value="0">0</option>
+           <option value="1">1</option>
+           <option value="2">2</option>
+           <option value="3">3</option>
+           <option value="4">4</option>
+           <option value="5">5</option>
+           <option value="6">6</option>
+           <option value="7">7</option>
+           <option value="8">8</option>
+           <option value="9">9</option>
+           <option value="10">10</option>
+           <option value="other">その他/其他</option>
+         </select>
+          <input type="number" name="qty_input[]" class="qty-input" style="display:none;" min="0" max="99" value="0" />
+          <input type="text" name="note[]" placeholder="備考" class="note">
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="images/sa-chashijinikuyakisoba.jpeg" alt="サーチャ羊肉焼きそば">
+        <div class="info">
+          <h3>サーチャ羊肉焼きそば/沙茶羊肉炒麵</h3>
+
+          <p class="price" data-price="100">金額：100</p>
+
+         <select class="qty" name="qty[]" data-item="サーチャ羊肉焼きそば/沙茶羊肉炒麵">
+           <option value="0">0</option>
+           <option value="1">1</option>
+           <option value="2">2</option>
+           <option value="3">3</option>
+           <option value="4">4</option>
+           <option value="5">5</option>
+           <option value="6">6</option>
+           <option value="7">7</option>
+           <option value="8">8</option>
+           <option value="9">9</option>
+           <option value="10">10</option>
+           <option value="other">その他/其他</option>
+         </select>
+          <input type="number" name="qty_input[]" class="qty-input" style="display:none;" min="0" max="99" value="0" />
+          <input type="text" name="note[]" placeholder="備考" class="note">
+        </div>
+      </div>
+
+      <button type="submit">決定/確定</button>
+    </form>
+    <p id="response"></p>
+  </div>
+  <div id="confirmModal" class="modal">
+    <div class="modal-content">
+      <h3>注文内容決定/確認訂單內容</h3>
+      <div id="orderSummary"></div>
+      <button id="submitOrder" type="button">送ります/送出訂單</button>
+      <button onclick="closeModal()" type="button">キャンセル/取消</button>
+      </div>
+  </div>
+
+  <audio id="clickSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_09c1ffb05d.mp3" preload="auto"></audio>
+   
+  <div id="finalConfirmModal" class="modal">
+    <div class="modal-content">
+      <h3>注文しました、ありがとうございます！/訂單已送出，感謝您的訂購！</h3>
+      <button onclick="document.getElementById('finalConfirmModal').classList.remove('show')" type="button">確定</button>
+      </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
