@@ -1,4 +1,4 @@
-const scriptURL = 'https://script.google.com/macros/s/AKfycbx3DVj1bhnXGvKjQg5YJ_dSMb3N6rOi63c8eRArUJajeks3D1iWfi3Xx4SUv8ysbMfrog/exec';
+const scriptURL = 'https://script.google.com/macros/s/AKfycbym45r2jAe7reYCH2NevWVvGGBK1uXTTA__e8IFA51HL0b3_B-XP3xYMkxvkU8dbe1H4Q/exec';
 
 const orderForm = document.getElementById('orderForm');
 const confirmModal = document.getElementById('confirmModal');
